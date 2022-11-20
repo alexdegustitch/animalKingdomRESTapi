@@ -1,6 +1,6 @@
-package com.animals.WebService.localhost.repository;
+package com.animals.WebService.repository;
 
-import com.animals.WebService.localhost.model.StageModel;
+import com.animals.WebService.model.StageModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

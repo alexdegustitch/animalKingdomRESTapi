@@ -1,8 +1,8 @@
-package com.animals.WebService.localhost.controller;
+package com.animals.WebService.controller;
 
 
-import com.animals.WebService.localhost.model.TournamentModel;
-import com.animals.WebService.localhost.service.TournamentService;
+import com.animals.WebService.model.TournamentModel;
+import com.animals.WebService.service.TournamentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

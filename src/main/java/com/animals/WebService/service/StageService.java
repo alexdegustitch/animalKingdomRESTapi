@@ -1,9 +1,8 @@
-package com.animals.WebService.localhost.service;
+package com.animals.WebService.service;
 
 
-import com.animals.WebService.heroku.repository.StageRepositoryHeroku;
-import com.animals.WebService.localhost.repository.StageRepository;
-import com.animals.WebService.localhost.model.StageModel;
+import com.animals.WebService.repository.StageRepository;
+import com.animals.WebService.model.StageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +14,9 @@ public class StageService {
     @Autowired
     private StageRepository stageRepository;
 
-    @Autowired
-    private StageRepositoryHeroku stageRepositoryHeroku;
 
     public StageModel saveStage(StageModel stageModel){
         StageModel s = stageRepository.save(stageModel);
-        com.animals.WebService.heroku.model.StageModel stageModel1 = new com.animals.WebService.heroku.model.StageModel();
-        stageModel1.setActive(s.getActive());
-        stageModel1.setStage_type(s.getStage_type());
-        stageModel1.setCompetition(s.getCompetition());
-        stageModel1.setId_stage(s.getId_stage());
-        stageModel1.setStart_date(s.getStart_date());
-        stageModel1.setEnd_date(s.getEnd_date());
-        stageRepositoryHeroku.save(stageModel1);
         return s;
 
     }

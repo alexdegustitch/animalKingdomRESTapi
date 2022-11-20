@@ -1,7 +1,7 @@
-package com.animals.WebService.localhost.repository;
+package com.animals.WebService.repository;
 
 
-import com.animals.WebService.localhost.model.VoteModel;
+import com.animals.WebService.model.VoteModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

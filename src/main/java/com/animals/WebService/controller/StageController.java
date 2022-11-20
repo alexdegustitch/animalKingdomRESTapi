@@ -1,12 +1,12 @@
-package com.animals.WebService.localhost.controller;
+package com.animals.WebService.controller;
 
 
-import com.animals.WebService.localhost.model.GroupModel;
-import com.animals.WebService.localhost.model.StageModel;
-import com.animals.WebService.localhost.model.AnimalModel;
-import com.animals.WebService.localhost.service.AnimalService;
-import com.animals.WebService.localhost.service.GroupService;
-import com.animals.WebService.localhost.service.StageService;
+import com.animals.WebService.model.GroupModel;
+import com.animals.WebService.model.StageModel;
+import com.animals.WebService.model.AnimalModel;
+import com.animals.WebService.service.AnimalService;
+import com.animals.WebService.service.GroupService;
+import com.animals.WebService.service.StageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

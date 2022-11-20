@@ -1,7 +1,7 @@
-package com.animals.WebService.heroku.repository;
+package com.animals.WebService.repository;
 
 
-import com.animals.WebService.heroku.model.TournamentModel;
+import com.animals.WebService.model.TournamentModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
-public interface TournamentRepositoryHeroku extends JpaRepository<TournamentModel, Integer> {
+public interface TournamentRepository  extends JpaRepository<TournamentModel, Integer> {
 
     @Query(value = "SELECT * FROM competition c WHERE c.active = 1", nativeQuery = true)
     List<TournamentModel> getActiveTournaments();

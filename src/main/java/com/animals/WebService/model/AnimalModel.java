@@ -1,4 +1,4 @@
-package com.animals.WebService.heroku.model;
+package com.animals.WebService.model;
 
 import javax.persistence.*;
 

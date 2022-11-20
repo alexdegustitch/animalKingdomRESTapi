@@ -1,11 +1,10 @@
-package com.animals.WebService.localhost.service;
+package com.animals.WebService.service;
 
-import com.animals.WebService.heroku.repository.GroupRepositoryHeroku;
-import com.animals.WebService.localhost.model.GroupModel;
-import com.animals.WebService.localhost.model.StageModel;
-import com.animals.WebService.localhost.model.VoteModel;
-import com.animals.WebService.localhost.repository.StageRepository;
-import com.animals.WebService.localhost.repository.VoteRepository;
+import com.animals.WebService.model.GroupModel;
+import com.animals.WebService.model.StageModel;
+import com.animals.WebService.model.VoteModel;
+import com.animals.WebService.repository.StageRepository;
+import com.animals.WebService.repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +16,6 @@ public class VoteService {
 
     @Autowired
     private VoteRepository voteRepository;
-
-    @Autowired
-    private GroupRepositoryHeroku groupRepositoryHeroku;
 
     @Autowired
     private GroupService groupService;
@@ -43,7 +39,6 @@ public class VoteService {
                 newVote.setWanted_animal(voteModel.getWanted_animal());
                 try {
                     voteRepository.save(newVote);
-                    groupRepositoryHeroku.updatePoints(voteModel.getWanted_animal(), stageModel.getId_stage(), voteModel.getProfile());
                     System.out.println("User " + newVote.getUsername() + " voted for animal " + newVote.getWanted_animal() + " in stage " + newVote.getStage() + "! - time: " + currentTime);
                 } catch (Exception e) {
                     System.out.println("User has already voted for the given animal! - time: " + currentTime);

@@ -1,4 +1,4 @@
-package com.animals.WebService.localhost.model;
+package com.animals.WebService.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;

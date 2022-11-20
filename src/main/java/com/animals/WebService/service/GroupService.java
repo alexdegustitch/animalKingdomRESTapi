@@ -1,9 +1,8 @@
-package com.animals.WebService.localhost.service;
+package com.animals.WebService.service;
 
 
-import com.animals.WebService.heroku.repository.GroupRepositoryHeroku;
-import com.animals.WebService.localhost.model.GroupModel;
-import com.animals.WebService.localhost.repository.GroupRepository;
+import com.animals.WebService.model.GroupModel;
+import com.animals.WebService.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,21 +13,9 @@ public class GroupService {
 
     @Autowired
     private GroupRepository groupRepository;
-    @Autowired
-    private GroupRepositoryHeroku groupRepositoryHeroku;
 
     public GroupModel saveGroup(GroupModel groupModel) {
         GroupModel gm = groupRepository.save(groupModel);
-        com.animals.WebService.heroku.model.GroupModel groupModel1 = new com.animals.WebService.heroku.model.GroupModel();
-        groupModel1.setGroup_number(gm.getGroup_number());
-        groupModel1.setActive(gm.getActive());
-        groupModel1.setAnimal(gm.getAnimal());
-        groupModel1.setId_group(gm.getId_group());
-        groupModel1.setStage(gm.getStage());
-        groupModel1.setPassed(gm.getPassed());
-        groupModel1.setPoints(gm.getPoints());
-        groupModel1.setLast_vote_time(gm.getLast_vote_time());
-        groupRepositoryHeroku.save(groupModel1);
         return gm;
     }
 

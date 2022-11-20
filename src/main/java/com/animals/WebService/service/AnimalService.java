@@ -1,8 +1,7 @@
-package com.animals.WebService.localhost.service;
+package com.animals.WebService.service;
 
-import com.animals.WebService.heroku.repository.AnimalRepositoryHeroku;
-import com.animals.WebService.localhost.model.AnimalModel;
-import com.animals.WebService.localhost.repository.AnimalRepository;
+import com.animals.WebService.model.AnimalModel;
+import com.animals.WebService.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -15,8 +14,6 @@ public class AnimalService {
     @Autowired
     private AnimalRepository animalRepository;
 
-    @Autowired
-    private AnimalRepositoryHeroku animalRepositoryHeroku;
 
     public AnimalModel saveAnimal(AnimalModel newAnimal) {
         AnimalModel a = animalRepository.save(newAnimal);

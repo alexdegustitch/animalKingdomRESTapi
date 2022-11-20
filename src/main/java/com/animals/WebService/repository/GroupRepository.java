@@ -1,7 +1,7 @@
-package com.animals.WebService.heroku.repository;
+package com.animals.WebService.repository;
 
 
-import com.animals.WebService.heroku.model.GroupModel;
+import com.animals.WebService.model.GroupModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface GroupRepositoryHeroku extends JpaRepository<GroupModel, Integer> {
+public interface GroupRepository extends JpaRepository<GroupModel, Integer> {
 
     @Query(value = "SELECT * FROM group_table gt WHERE gt.stage = :stage ORDER BY gt.group_number ASC", nativeQuery = true)
     List<GroupModel> getAllGroupsForStage(@Param("stage") Integer stage);
@@ -32,7 +32,4 @@ public interface GroupRepositoryHeroku extends JpaRepository<GroupModel, Integer
 
     @Query(value = "SELECT * FROM group_table gt WHERE gt.stage = :stage and gt.group_number = :number ORDER BY gt.points DESC, gt.animal ASC", nativeQuery = true)
     List<GroupModel> groupsForStage(@Param("stage") Integer stage, @Param("number") Integer number);
-
-    @Query(value = "UPDATE group_table SET points = points + 1, profile = :profile WHERE animal = :animal AND stage = :stage", nativeQuery = true)
-    GroupModel updatePoints(@Param("animal") Integer animal, @Param("stage") Integer stage, @Param("profile") String profile);
 }

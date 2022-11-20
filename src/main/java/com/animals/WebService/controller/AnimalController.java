@@ -1,7 +1,7 @@
-package com.animals.WebService.localhost.controller;
+package com.animals.WebService.controller;
 
-import com.animals.WebService.localhost.model.AnimalModel;
-import com.animals.WebService.localhost.service.AnimalService;
+import com.animals.WebService.model.AnimalModel;
+import com.animals.WebService.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
